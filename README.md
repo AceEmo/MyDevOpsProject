@@ -1,38 +1,32 @@
-\# Simple DevOps REST Service
+# Simple DevOps REST Service
 
+Това е учебен проект, който демонстрира **основни DevOps практики** и използва популярни инструменти за контейнеризация и автоматизация.
 
+---
 
-Това е учебен проект, който демонстрира основни DevOps практики.
+## Технологии
 
+- **Python (Flask)** – за REST API приложението.  
+- **Docker** – за контейнеризация и лесно стартиране на приложението.  
+- **GitHub Actions** – CI/CD пайплайн за автоматично build-ване и push-ване на Docker image.  
+- **Terraform & Ansible** – Infrastructure as Code (IaC) примери за AWS.
 
+---
 
-\## Технологии
+## Как работи
 
-\* \*\*Python (Flask)\*\*: За REST API приложението.
+Приложението има два endpoint-а:  
 
-\* \*\*Docker\*\*: За контейнеризация.
+1. `/` → Връща `"Hello World"`.  
+2. `/hostname` → Връща името на машината (host name).  
 
-\* \*\*GitHub Actions\*\*: CI/CD пайплайн за автоматично създаване на Docker image.
+---
 
-\* \*\*Terraform \& Ansible\*\*: Infrastructure as Code (IaC) примери за AWS.
-
-
-
-\## Как работи
-
-Приложението има два endpoint-а:
-
-1\. `/` -> Връща "Hello World".
-
-2\. `/hostname` -> Връща името на машината (Host ID).
-
-
-
-\## Стартиране с Docker
+## Стартиране с Docker
 
 ```bash
-
+# Build Docker image
 docker build -t my-app .
 
+# Стартирай контейнера и отвори порт 80
 docker run -p 80:80 my-app
-
