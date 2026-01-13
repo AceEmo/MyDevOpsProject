@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1" # Или твоя предпочитан регион
+  region = "us-east-1"
 }
 
 resource "aws_security_group" "web_sg" {
@@ -22,8 +22,8 @@ resource "aws_security_group" "web_sg" {
 }
 
 resource "aws_instance" "web_server" {
-  ami           = "ami-0c7217cdde317cfec" # Примерно ID за Ubuntu в us-east-1 (провери актуалното!)
-  instance_type = "t2.micro" # Free tier eligible
+  ami           = "ami-0c7217cdde317cfec"
+  instance_type = "t2.micro"
   
   security_groups = [aws_security_group.web_sg.name]
   
